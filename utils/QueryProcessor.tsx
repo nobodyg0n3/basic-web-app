@@ -29,7 +29,14 @@ export default function QueryProcessor(query: string): string {
   if (minMatch) {
     const x: number = parseInt(minMatch[1]);
     const y: number = parseInt(minMatch[2]);
-    return (x+y).toString();
+    return (x-y).toString();
+  }
+
+  const powOf = query.match(/What is (\d+)) to the power of (\d+)/);
+  if (powOf) {
+    const x: number = parseInt(powOf[1]);
+    const y: number = parseInt(powOf[2]);
+    return (x^y).toString();
   }
 
   return "";
