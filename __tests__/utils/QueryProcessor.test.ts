@@ -17,4 +17,25 @@ describe("QueryProcessor", () => {
             "writer in the English language and the world's pre-eminent dramatist."
           ));
     });
+
+    test('should return andrewID', () => {
+        const query = "What is your andrew ID?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "SRIYAD"
+          ));
+    });
+
+    test('should answer name', () => {
+        const query = "What is your name?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Sara"
+          ));
+    });
+
+    test('should add numbers', () => {
+        expect(QueryProcessor("What is 5 plus 52?")).toEqual("57");
+        expect(QueryProcessor("What is 12 plus 1?")).toEqual("13");
+    });
 });
