@@ -36,7 +36,7 @@ export default function QueryProcessor(query: string): string {
   if (powOf) {
     const x: number = parseInt(powOf[1]);
     const y: number = parseInt(powOf[2]);
-    return (x^y).toString();
+    return (x**y).toString();
   }
 
   return "";
